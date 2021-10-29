@@ -5,7 +5,7 @@ pipeline {
         stage('Build') {
             steps {
                 bat 'gradle build'
-				gat 'gradle war'
+				bat 'gradle war'
             }
         }
         stage('Test') {

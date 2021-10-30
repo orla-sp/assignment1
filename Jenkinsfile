@@ -16,7 +16,8 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
-				bat 'C:/Users/orlam/Documents/4th_year/Software_Eng/A1A/build/libs/A1A-1.0-SNAPSHOT.war C:/Users/orlam/apache-tomcat-8.5.72/webapps'
+				bat 'gradle war'
+				sh 'cp C:/Users/orlam/Documents/4th_year/Software_Eng/A1A/build/libs/A1A-1.0-SNAPSHOT.war C:/Users/orlam/apache-tomcat-8.5.72/webapps'
             }
         }
     }

@@ -5,6 +5,10 @@ import static org.junit.Assert.*;
 public class ModuleTest {
     private Module test = new Module("Software Engineering", "CT417");
 
+    /**
+     * Accessor and mutator methods tested by setting with new value
+     * then returning the value and seeing if these two values are equal
+     */
     @Test
     public void mNameTest() {
         test.setmName("System on Chip");

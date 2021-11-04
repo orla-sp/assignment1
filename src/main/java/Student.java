@@ -2,7 +2,7 @@
 import java.util.ArrayList;
 
 public class Student {
-
+    // initialising variables
     private String name;
     private int age;
     private String dob;
@@ -20,38 +20,33 @@ public class Student {
         courses = new ArrayList<>();
         courses.add(course);
     }
+    // Accessor and Mutator methods
     public String getName() {
         return name;
     }
-
     public void setName(String name) {
         this.name = name;
     }
-
     public int getAge() {
         return age;
     }
-
     public void setAge(int age) {
         this.age = age;
     }
-
     public String getDob() {
         return dob;
     }
-
     public void setDob(String dob) {
         this.dob = dob;
     }
-
     public String getId() {
         return id;
     }
-
     public void setId(String id) {
         this.id = id;
     }
 
+    // username set by concatenating student's name and age
     public String getUsername() {
         String str = name+age;
         return str;
@@ -60,15 +55,19 @@ public class Student {
     public void setUsername(String username) {
         this.username = username;
     }
-
     public ArrayList<Course> getCourses() {
         return courses;
     }
-
     public void setCourses(ArrayList<Course> courses) {
         this.courses = courses;
     }
+    public void setModules(ArrayList<Module> modules) {
+        this.modules = modules;
+    }
 
+    // method gets list of modules taken by each student by looping over
+    // each course taken by the student and looping over each module in that course
+    // this adds each module taken by the student to the modules list
     public ArrayList<Module> getModules() {
         for(Course c : courses) {
             for(Module m : c.getModules()) {
@@ -77,9 +76,5 @@ public class Student {
             }
         }
         return modules;
-    }
-
-    public void setModules(ArrayList<Module> modules) {
-        this.modules = modules;
     }
 }

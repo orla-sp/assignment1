@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import org.joda.time.DateTime;
 
 public class StudentTest {
+    // initialing couse and student objects used in tests
     private Course ECE = new Course("ECE", new DateTime(2018, 8, 28, 9, 0 ,0 ,0), new DateTime(2021, 6, 20, 5, 0, 0, 0));
     private Student test = new Student("orla", 21, "05/04/2000", "123456", ECE);
 
@@ -14,8 +15,12 @@ public class StudentTest {
     public void usernameTest() {
         String uName = test.getUsername();
         assertTrue(uName.equals("orla21"));
+        // passes test if returned username is the concatenation of the students name and age
     }
-
+    /**
+     * Accessor and mutator methods tested by setting with new value
+     * then returning the value and seeing if these two values are equal
+     */
     @Test
     public void nameTest() {
         test.setName("Jack");

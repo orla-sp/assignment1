@@ -3,7 +3,7 @@ import java.util.ArrayList;
 import org.joda.time.*;
 
 public class Course {
-    // initialising variabled
+    // initialising variables
     private String cName;
     private ArrayList<Module> modules;
     private ArrayList<Student> students;

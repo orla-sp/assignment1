@@ -20,6 +20,8 @@ public class Course {
     public void addStudent(Student s) {
         students.add(s);
     }
+    // adds module to list
+    // also adds course to list for given module
     public void addModule(Module m) {
         modules.add(m);
         m.addCourse(this);

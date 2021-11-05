@@ -14,9 +14,11 @@ public class Module {
         students = new ArrayList<>();
         courses = new ArrayList<>();
     }
+    // adds student to list
     public void addStudent(Student s) {
         students.add(s);
     }
+    // adds student to list
     public void addCourse(Course c) {
         courses.add(c);
     }

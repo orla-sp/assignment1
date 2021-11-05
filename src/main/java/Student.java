@@ -20,10 +20,14 @@ public class Student {
         courses = new ArrayList<>();
         addCourse(course);
     }
+    // adds course to list
+    // also adds student to list for given course
     public void addCourse(Course c) {
         courses.add(c);
         c.addStudent(this);
     }
+    // adds module to list
+    // also adds student to list for given module
     public void addModule(Module m) {
         modules.add(m);
         m.addStudent(this);

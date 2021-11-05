@@ -14,6 +14,12 @@ public class Module {
         students = new ArrayList<>();
         courses = new ArrayList<>();
     }
+    public void addStudent(Student s) {
+        students.add(s);
+    }
+    public void addCourse(Course c) {
+        courses.add(c);
+    }
     // Accessor and Mutator methods
     public String getmName() {
         return mName;
@@ -36,18 +42,7 @@ public class Module {
     public void setCourses(ArrayList<Course> courses) {
         this.courses = courses;
     }
-
-    // method gets list of courses in module by looping over students
-    // and looping over each course that each student takes
-    // this adds each course in the module to the modules list
     public ArrayList<Course> getCourses() {
-        for(Student s : students) {
-            for(Course c : s.getCourses()) {
-                if(!courses.contains(c)) {
-                    courses.add(c);
-                }
-            }
-        }
         return courses;
     }
 

@@ -18,7 +18,15 @@ public class Student {
         this.id = id;
         modules = new ArrayList<>();
         courses = new ArrayList<>();
-        courses.add(course);
+        addCourse(course);
+    }
+    public void addCourse(Course c) {
+        courses.add(c);
+        c.addStudent(this);
+    }
+    public void addModule(Module m) {
+        modules.add(m);
+        m.addStudent(this);
     }
     // Accessor and Mutator methods
     public String getName() {
@@ -45,7 +53,9 @@ public class Student {
     public void setId(String id) {
         this.id = id;
     }
-
+    public ArrayList<Module> getModules() {
+        return modules;
+    }
     // username set by concatenating student's name and age
     public String getUsername() {
         String str = name+age;
@@ -65,16 +75,4 @@ public class Student {
         this.modules = modules;
     }
 
-    // method gets list of modules taken by each student by looping over
-    // each course taken by the student and looping over each module in that course
-    // this adds each module taken by the student to the modules list
-    public ArrayList<Module> getModules() {
-        for(Course c : courses) {
-            for(Module m : c.getModules()) {
-                if(!modules.contains(m)) {
-                    modules.add(m);				}
-            }
-        }
-        return modules;
-    }
 }

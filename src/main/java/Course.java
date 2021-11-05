@@ -17,6 +17,13 @@ public class Course {
         modules = new ArrayList<>();
         students = new ArrayList<>();
     }
+    public void addStudent(Student s) {
+        students.add(s);
+    }
+    public void addModule(Module m) {
+        modules.add(m);
+        m.addCourse(this);
+    }
     public String printModules() {
         String str = "";
         // loops over modules in list and adds module names to string
@@ -29,7 +36,7 @@ public class Course {
     public String printStudents() {
         String str = "";
         // loops over modules in list and adds module names to string
-        for(Student s : getStudents()) {
+        for(Student s : students) {
             str += s.getName() + ", ";
         }
         // returns string containing list of students
@@ -48,18 +55,7 @@ public class Course {
     public void setModules(ArrayList<Module> modules) {
         this.modules = modules;
     }
-
-    // method gets list of students in course by looping over modules
-    // and looping over each student in each module
-    // this adds each student in the course to the students list
     public ArrayList<Student> getStudents() {
-        for(Module m : modules) {
-            for(Student s : m.getStudents()) {
-                if(!students.contains(s)) {
-                    students.add(s);
-                }
-            }
-        }
         return students;
     }
 
